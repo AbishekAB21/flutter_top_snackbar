@@ -5,6 +5,9 @@ import 'package:flutter_top_snackbar/src/animation_type.dart';
 import 'package:flutter_top_snackbar/src/flutter_top_snackbar_widget.dart';
 import 'package:flutter_top_snackbar/src/theme.dart';
 
+export 'src/animation_type.dart';
+
+
 /// A utility class to show a snackbar from the top of the screen.
 class FlutterTopSnackbar {
   /// Shows a top snackbar with a slide animation.

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_top_snackbar/src/theme.dart';
 import 'package:flutter_top_snackbar/src/animation_type.dart';
 
-/// A widget that shows a custom snackbar from the top 
+/// A widget that shows a custom snackbar from the top
 
 class FlutterTopSnackbarWidget extends StatefulWidget {
   final String message;
@@ -57,9 +57,15 @@ class _FlutterTopSnackbarWidgetState extends State<FlutterTopSnackbarWidget>
 
     _controller.forward();
 
-    Future.delayed(widget.duration, () {
-      _controller.reverse().then((_) => widget.onDismissed);
-    });
+    Future.delayed(widget.duration , () {
+    if (mounted) {
+      _controller.reverse().then((_) {
+        if (mounted) {
+          widget.onDismissed(); // This removes the overlay
+        }
+      });
+    }
+  });
   }
 
   // Animation logic
@@ -108,7 +114,6 @@ class _FlutterTopSnackbarWidgetState extends State<FlutterTopSnackbarWidget>
 
   @override
   Widget build(BuildContext context) {
-
     // Snackbar UI
     final content = Material(
       elevation: widget.elevation,
@@ -164,14 +169,16 @@ class _FlutterTopSnackbarWidgetState extends State<FlutterTopSnackbarWidget>
     }
 
     return Positioned(
-      child:
-          widget.dismissible
-              ? Dismissible(
-                key: UniqueKey(),
-                direction: widget.dismissDirection ?? DismissDirection.up,
-                child: animatedContent,
-              )
-              : animatedContent,
+      top: MediaQuery.of(context).padding.top + 10, // a little below status bar
+      left: 16,
+      right: 16,
+      child: widget.dismissible
+          ? Dismissible(
+              key: UniqueKey(),
+              direction: widget.dismissDirection ?? DismissDirection.up,
+              child: animatedContent,
+            )
+          : animatedContent,
     );
   }
 
