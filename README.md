@@ -11,11 +11,14 @@
 
 ## 📸 Demo
 
-![Success](example/success.png)
-![Error](example/error.png)
-![Info](example/info.png)
-![Warning](example/warning.png)
-![Custom](example/custom.png)
+<div style="display: flex; flex-wrap: wrap; gap: 10px;">
+  <img src="example/success.png" width="200" />
+  <img src="example/error.png" width="200" />
+  <img src="example/info.png" width="200" />
+  <img src="example/warning.png" width="200" />
+  <img src="example/custom.png" width="200" />
+</div>
+
 
 ---
 
