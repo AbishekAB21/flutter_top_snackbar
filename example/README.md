@@ -4,8 +4,8 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Flutter Platform](https://img.shields.io/badge/platform-flutter-blue.svg)](https://flutter.dev)
 
-> **A Flutter package that lets you display a beautiful snackbar from the top of the screen.**  
-> Supports predefined themes, custom colors, custom icons, multiple animations, and more.
+> **flutter_top_snackbar is a Flutter package to display customizable snackbars from the top of the screen.**  
+> It supports multiple predefined themes (`success`, `info`, `error`, `warning`), custom icons, colors, and animations. Designed to be lightweight, easy to integrate, and fully customizable for any Flutter project.
 
 ---
 
@@ -16,8 +16,6 @@
 ![Info](example/info.png)
 ![Warning](example/warning.png)
 ![Custom](example/custom.png)
-
-
 
 ---
 

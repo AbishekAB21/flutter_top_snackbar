@@ -1,6 +1,6 @@
 name: flutter_top_snackbar
-description: "A customizable top snackbar widget with animations and themes."
-version: 0.0.1
+description: "A Flutter package to display customizable snackbars from the top of the screen with themes, animations, and custom icons."
+version: 1.0.0
 homepage: https://github.com/AbishekAB21/flutter_top_snackbar
 
 environment:
