@@ -11,9 +11,10 @@ class SnackbarExampleApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Top Snackbar Example',
+      title: 'Flutter Top Snackbar Example',
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(title: const Text('Top Snackbar Example')),
+        appBar: AppBar(title: const Text('Flutter Top Snackbar Example')),
         body: const SnackbarDemo(),
       ),
     );
@@ -29,6 +30,7 @@ class SnackbarDemo extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          // Success
           ElevatedButton(
             onPressed: () {
               FlutterTopSnackbar.success(context, 'Operation Successful!');
@@ -36,6 +38,38 @@ class SnackbarDemo extends StatelessWidget {
             child: const Text('Show Success Snackbar'),
           ),
           const SizedBox(height: 16),
+
+          // Error
+          ElevatedButton(
+            onPressed: () {
+              FlutterTopSnackbar.error(context, 'Operation Failed!');
+            },
+            child: const Text('Show Error Snackbar'),
+          ),
+          const SizedBox(height: 16),
+
+          // Info
+          ElevatedButton(
+            onPressed: () {
+              FlutterTopSnackbar.info(
+                context,
+                'This is a snackbar from the top!',
+              );
+            },
+            child: const Text('Show info Snackbar'),
+          ),
+          const SizedBox(height: 16),
+
+          // Warning
+          ElevatedButton(
+            onPressed: () {
+              FlutterTopSnackbar.warning(context, 'Warning!');
+            },
+            child: const Text('Show warning Snackbar'),
+          ),
+          const SizedBox(height: 16),
+
+          // Custom
           ElevatedButton(
             onPressed: () {
               FlutterTopSnackbar.show(
