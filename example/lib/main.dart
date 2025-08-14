@@ -78,6 +78,8 @@ class SnackbarDemo extends StatelessWidget {
                 customBackgroundColor: Colors.black,
                 customIcon: Icons.star,
                 animationType: AnimationTypes.fade,
+                dismissible: true,
+                dismissDirection: DismissDirection.horizontal
               );
             },
             child: const Text('Show Custom Snackbar'),

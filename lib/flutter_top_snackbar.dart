@@ -29,7 +29,7 @@ class FlutterTopSnackbar {
     bool dismissible = false,
     AnimationTypes animationType = AnimationTypes.slideFromTop,
     SnackBarAction? action,
-    DismissDirection? dismissDirection,
+    DismissDirection? dismissDirection  = DismissDirection.up,
   }) {
     final overlay = Overlay.of(context);
     late OverlayEntry overlayEntry;

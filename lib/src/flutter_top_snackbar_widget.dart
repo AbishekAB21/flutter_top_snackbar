@@ -57,15 +57,15 @@ class _FlutterTopSnackbarWidgetState extends State<FlutterTopSnackbarWidget>
 
     _controller.forward();
 
-    Future.delayed(widget.duration , () {
-    if (mounted) {
-      _controller.reverse().then((_) {
-        if (mounted) {
-          widget.onDismissed(); // This removes the overlay
-        }
-      });
-    }
-  });
+    Future.delayed(widget.duration, () {
+      if (mounted) {
+        _controller.reverse().then((_) {
+          if (mounted) {
+            widget.onDismissed(); // This removes the overlay
+          }
+        });
+      }
+    });
   }
 
   // Animation logic
@@ -175,6 +175,11 @@ class _FlutterTopSnackbarWidgetState extends State<FlutterTopSnackbarWidget>
       child: widget.dismissible
           ? Dismissible(
               key: UniqueKey(),
+              onDismissed: (direction) {
+                if (mounted) {
+                  widget.onDismissed();
+                }
+              },
               direction: widget.dismissDirection ?? DismissDirection.up,
               child: animatedContent,
             )
