@@ -75,7 +75,7 @@ class SnackbarDemo extends StatelessWidget {
               FlutterTopSnackbar.show(
                 context,
                 'Custom Snackbar Example',
-                customBackgroundColor: Colors.lightBlue,
+                customBackgroundColor: Colors.black,
                 customIcon: Icons.star,
                 animationType: AnimationTypes.fade,
               );

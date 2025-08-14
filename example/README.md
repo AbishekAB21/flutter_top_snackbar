@@ -1,16 +1,42 @@
-# example
+# flutter_top_snackbar
 
-A new Flutter project.
+[![pub package](https://img.shields.io/pub/v/flutter_top_snackbar.svg)](https://pub.dev/packages/flutter_top_snackbar)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Flutter Platform](https://img.shields.io/badge/platform-flutter-blue.svg)](https://flutter.dev)
 
-## Getting Started
+> **A Flutter package that lets you display a beautiful snackbar from the top of the screen.**  
+> Supports predefined themes, custom colors, custom icons, multiple animations, and more.
 
-This project is a starting point for a Flutter application.
+---
 
-A few resources to get you started if this is your first Flutter project:
+## 📸 Demo
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+![Success](example/success.png)
+![Error](example/error.png)
+![Info](example/info.png)
+![Warning](example/warning.png)
+![Custom](example/custom.png)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+
+---
+
+## ✨ Features
+
+- ✅ Show snackbar with **predefined themes**: `success`, `info`, `error`, `warning`
+- 🎨 **Customizable**: use your own background color & icon
+- 🎬 Multiple animations: `slideFromTop`, `fade`, `scale`, `slideFromLeft`, `slideFromRight`
+- ⏳ Adjustable duration
+- 🗑 `onDismissed` callback
+- 🚪 Optional `isDismissible` flag and custom dismiss direction
+- 📦 Lightweight and easy to integrate
+
+---
+
+## 📦 Installation
+
+Add this to your **pubspec.yaml**:
+
+```yaml
+dependencies:
+  flutter_top_snackbar: ^1.0.0
