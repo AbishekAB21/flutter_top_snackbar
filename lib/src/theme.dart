@@ -3,12 +3,10 @@ import 'package:flutter/material.dart';
 class FlutterTopSnackbarTheme {
   final Color backgroundColor;
   final IconData? icon;
-  final TextStyle textStyle;
 
   const FlutterTopSnackbarTheme({
     required this.backgroundColor,
     this.icon,
-    this.textStyle = const TextStyle(color: Colors.white, fontSize: 16),
   });
 
   // Success

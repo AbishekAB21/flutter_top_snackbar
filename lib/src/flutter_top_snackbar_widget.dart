@@ -6,6 +6,7 @@ import 'package:flutter_top_snackbar/src/animation_type.dart';
 
 class FlutterTopSnackbarWidget extends StatefulWidget {
   final String message;
+  final TextStyle? messageFontstyle;
   final Duration duration;
   final VoidCallback onDismissed;
   final FlutterTopSnackbarTheme snackbarTheme;
@@ -16,10 +17,16 @@ class FlutterTopSnackbarWidget extends StatefulWidget {
   final AnimationTypes animationType;
   final SnackBarAction? action;
   final DismissDirection? dismissDirection;
+  final Color? customIconColor;
+  final double? customIconSize;
+  final bool showCloseButton;
+  final Color? closeButtonColor;
+  final double? closeButtonSize;
 
   const FlutterTopSnackbarWidget({
     super.key,
     required this.message,
+    this.messageFontstyle,
     required this.duration,
     required this.onDismissed,
     required this.snackbarTheme,
@@ -30,6 +37,11 @@ class FlutterTopSnackbarWidget extends StatefulWidget {
     this.animationType = AnimationTypes.slideFromTop,
     this.action,
     this.dismissDirection,
+    this.customIconColor,
+    this.customIconSize,
+    required this.showCloseButton,
+    this.closeButtonColor,
+    this.closeButtonSize,
   });
 
   @override
@@ -115,6 +127,7 @@ class _FlutterTopSnackbarWidgetState extends State<FlutterTopSnackbarWidget>
   @override
   Widget build(BuildContext context) {
     // Snackbar UI
+    final defaultTextStyle = const TextStyle(color: Colors.white, fontSize: 16);
     final content = Material(
       elevation: widget.elevation,
       borderRadius: BorderRadius.circular(widget.borderRadius),
@@ -122,22 +135,35 @@ class _FlutterTopSnackbarWidgetState extends State<FlutterTopSnackbarWidget>
       child: Padding(
         padding: widget.padding,
         child: Row(
-          mainAxisSize: MainAxisSize.min,
+          mainAxisSize: MainAxisSize.max,
           children: [
             if (widget.snackbarTheme.icon != null) ...[
               Icon(
                 widget.snackbarTheme.icon,
-                color: widget.snackbarTheme.textStyle.color,
+                color: widget.customIconColor ??
+                    (widget.messageFontstyle ?? defaultTextStyle).color,
+                size: widget.customIconSize ?? 20.0,
               ),
               const SizedBox(width: 8),
             ],
             Expanded(
               child: Text(
                 widget.message,
-                style: widget.snackbarTheme.textStyle,
+                style: widget.messageFontstyle ?? defaultTextStyle,
               ),
             ),
             if (widget.action != null) widget.action!,
+            if (widget.showCloseButton) ...[
+              IconButton(
+                onPressed: widget.onDismissed,
+                icon: Icon(
+                  Icons.close_rounded,
+                  size: widget.closeButtonSize ?? 20.0,
+                ),
+                color: widget.closeButtonColor ??
+                    (widget.messageFontstyle ?? defaultTextStyle).color,
+              )
+            ]
           ],
         ),
       ),

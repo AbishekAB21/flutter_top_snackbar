@@ -75,11 +75,23 @@ class SnackbarDemo extends StatelessWidget {
               FlutterTopSnackbar.show(
                 context,
                 'Custom Snackbar Example',
+                messageFontstyle: TextStyle(
+                  fontSize: 16,
+                  color: Colors.yellow,
+                  fontWeight: FontWeight.bold,
+                ),
+                padding: EdgeInsets.all(20.0),
+                elevation: 8,
                 customBackgroundColor: Colors.black,
                 customIcon: Icons.star,
+                customIconColor: Colors.red,
+                customIconSize: 50.0,
                 animationType: AnimationTypes.fade,
                 dismissible: true,
-                dismissDirection: DismissDirection.horizontal
+                dismissDirection: DismissDirection.horizontal,
+                showCloseButton: true,
+                closeButtonColor: Colors.blue,
+                closeButtonSize: 30.0
               );
             },
             child: const Text('Show Custom Snackbar'),

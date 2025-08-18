@@ -7,7 +7,6 @@ import 'package:flutter_top_snackbar/src/theme.dart';
 
 export 'src/animation_type.dart';
 
-
 /// A utility class to show a snackbar from the top of the screen.
 class FlutterTopSnackbar {
   /// Shows a top snackbar with a slide animation.
@@ -29,7 +28,13 @@ class FlutterTopSnackbar {
     bool dismissible = false,
     AnimationTypes animationType = AnimationTypes.slideFromTop,
     SnackBarAction? action,
-    DismissDirection? dismissDirection  = DismissDirection.up,
+    DismissDirection? dismissDirection = DismissDirection.up,
+    TextStyle? messageFontstyle,
+    Color? customIconColor,
+    double? customIconSize,
+    bool showCloseButton = true,
+    Color? closeButtonColor,
+    double? closeButtonSize,
   }) {
     final overlay = Overlay.of(context);
     late OverlayEntry overlayEntry;
@@ -41,21 +46,29 @@ class FlutterTopSnackbar {
     );
 
     overlayEntry = OverlayEntry(
-      builder:
-          (context) => FlutterTopSnackbarWidget(
-            message: message,
-            duration: duration,
-            onDismissed: () => overlayEntry.remove(),
-            snackbarTheme: appliedTheme,
-            borderRadius: borderRadius,
-            animationType: animationType,
-            dismissible: dismissible,
-            dismissDirection: dismissDirection,
-            action: action,
-          ),
+      builder: (context) => FlutterTopSnackbarWidget(
+        message: message,
+        duration: duration,
+        onDismissed: () => overlayEntry.remove(),
+        snackbarTheme: appliedTheme,
+        borderRadius: borderRadius,
+        animationType: animationType,
+        dismissible: dismissible,
+        dismissDirection: dismissDirection,
+        action: action,
+        messageFontstyle: messageFontstyle,
+        padding: padding,
+        elevation: elevation,
+        customIconColor: customIconColor,
+        customIconSize: customIconSize,
+        showCloseButton: showCloseButton,
+        closeButtonColor: closeButtonColor,
+        closeButtonSize: closeButtonSize,
+      ),
     );
 
     overlay.insert(overlayEntry);
+
   }
 
   // Success
