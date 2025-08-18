@@ -80,7 +80,7 @@ class SnackbarDemo extends StatelessWidget {
                   color: Colors.yellow,
                   fontWeight: FontWeight.bold,
                 ),
-                padding: EdgeInsets.all(20.0),
+                padding: EdgeInsets.all(5.0),
                 elevation: 8,
                 customBackgroundColor: Colors.black,
                 customIcon: Icons.star,

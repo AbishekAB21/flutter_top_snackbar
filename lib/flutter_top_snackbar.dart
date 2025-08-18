@@ -21,10 +21,7 @@ class FlutterTopSnackbar {
     IconData? customIcon,
     double borderRadius = 10.0,
     double elevation = 6.0,
-    EdgeInsetsGeometry padding = const EdgeInsets.symmetric(
-      vertical: 12,
-      horizontal: 16,
-    ),
+    EdgeInsetsGeometry? padding,
     bool dismissible = false,
     AnimationTypes animationType = AnimationTypes.slideFromTop,
     SnackBarAction? action,
@@ -57,7 +54,7 @@ class FlutterTopSnackbar {
         dismissDirection: dismissDirection,
         action: action,
         messageFontstyle: messageFontstyle,
-        padding: padding,
+        padding: padding ?? EdgeInsets.symmetric(horizontal: 5, vertical: 5),
         elevation: elevation,
         customIconColor: customIconColor,
         customIconSize: customIconSize,
@@ -68,7 +65,6 @@ class FlutterTopSnackbar {
     );
 
     overlay.insert(overlayEntry);
-
   }
 
   // Success
