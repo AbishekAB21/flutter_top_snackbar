@@ -1,2 +1,7 @@
-## 1.0.2
-- dismiss bug resolved
+## 1.0.3
+- close icon feature
+- close icon size and color manipulation
+- custom icon feature
+- custom icon size and color manipulation
+- custom textstyle
+- custom padding big fixed
